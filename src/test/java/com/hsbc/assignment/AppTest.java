@@ -83,4 +83,23 @@ public class AppTest
             assertEquals(expectedValue, averageSalaryMap.get(key));
         });
     }
+    @Test
+    void testFindAverageSalaryWithEqualSalariesSameGroup() {
+        List<Employee> employees = Arrays.asList(
+                new Employee("Ashish", "A", "IT", "Pune", "Recruiter", new Double(10000)),
+                new Employee("Amit", "R", "HR", "Pune", "Recruiter", new Double(10000)),
+                new Employee("Ramesh", "D", "HR", "Pune", "Recruiter", new Double(10000))
+        );
+        // Calculate average salary
+        Map<String, Double> averageSalaryMap = FindAverageSalaryApp.findAverageSalary(employees);
+        // Expected result
+        Map<String, Double> expected = new HashMap <String, Double>(){{
+            put("Pune,Recruiter", new Double(10000.0));
+        }};
+        assertEquals(expected.size(), averageSalaryMap.size());
+        expected.forEach((key, expectedValue) -> {
+            assertEquals(expectedValue, averageSalaryMap.get(key));
+        });
+
+    }
 }
