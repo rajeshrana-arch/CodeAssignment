@@ -27,7 +27,7 @@ public class App {
         Map<String, Double> averageSalaryMap = FindAverageSalaryApp.findAverageSalary(employees);
         // Print results
         averageSalaryMap.forEach((key, value) -> {
-            String[] keyParts = key.split("_");
+            String[] keyParts = key.split(",");
             String officeLocation = keyParts[0];
             String designation = keyParts[1];
             System.out.println(officeLocation + " --> " + designation + " --> " + value);

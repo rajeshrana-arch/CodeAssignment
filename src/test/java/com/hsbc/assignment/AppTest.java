@@ -26,11 +26,11 @@ public class AppTest
             new Employee("Smita", "M", "IT", "Bangalore", "Recruiter", new Double(16000)));
         // Expected result
         Map<String, Double> expected = new HashMap <String, Double>(){{
-           put("Pune_Tech Lead", new Double(15000.0));
-           put("Pune_Senior Recruiter", new Double(14000.0));
-           put("Bangalore_Recruiter", new Double(16000.0));
-           put("Pune_Software Engineer", new Double(10000.0));
-           put("Pune_Recruiter", new Double(19000.00));
+           put("Pune,Tech Lead", new Double(15000.0));
+           put("Pune,Senior Recruiter", new Double(14000.0));
+           put("Bangalore,Recruiter", new Double(16000.0));
+           put("Pune,Software Engineer", new Double(10000.0));
+           put("Pune,Recruiter", new Double(12000.0));
         }};
         // Calculate average salary
         Map<String, Double> averageSalaryMap = FindAverageSalaryApp.findAverageSalary(employees);

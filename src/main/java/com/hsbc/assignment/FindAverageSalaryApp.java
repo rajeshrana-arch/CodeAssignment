@@ -13,7 +13,7 @@ public class FindAverageSalaryApp {
     //Write your logic here
         return employees.stream()
                 .collect(Collectors.groupingBy(
-                        emp -> emp.getOfficeLocation() + "_" + emp.getDesignation(),
+                        emp -> emp.getOfficeLocation() + "," + emp.getDesignation(),
                         Collectors.averagingDouble(Employee::getSalary)
                 ));
     }
